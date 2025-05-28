@@ -1,0 +1,97 @@
+/* Ensure that the hero section has the blur effect and a full width */
+ 
+#hero.blur-effect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -5%;
+    margin-top: -5%;
+    width: 300px;
+    height: 290px;
+    background: rgba(0, 0, 0, 0.1); /* Adjust the blur effect as needed */
+ 
+}
+
+/* Container layout for side-by-side image and text */
+#hero .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Adjust columns for responsive layout */
+    padding-top: 100px;
+    align-items: center; /* Center items vertically */
+    min-height: 100vh;
+    gap: 20px; /* Space between image and text */
+}
+
+#hero .hero-image {
+    position: relative;
+    max-width: 100%; /* Ensure the image fits within its container */
+    overflow: hidden; /* Hide any overflow from the image */
+}
+
+#hero .hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#hero .hero-image::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, transparent, var(--bg-primary));
+}
+
+#new {
+    margin-left: 25%;
+}
+
+#link {
+    color: aliceblue;
+}
+
+#hero .buttons-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 40px;
+    flex-wrap: wrap;  
+    gap: 10px;  
+}
+
+@media(max-width: 1500px) {
+    #hero .container {
+        min-height: auto;
+    }
+}
+
+@media(max-width: 1040px) {
+    #hero .container {
+        grid-template-columns: 500px auto;
+    }
+}
+
+@media(max-width: 900px) {
+    #hero .container {
+        grid-template-columns: 100%; 
+    }
+
+    #hero .hero-image {
+        margin: 0 auto;  
+    }
+}
+
+ 
+#hero .description {
+    text-align: center;
+}
+
+ 
+@media(max-width: 900px) {
+    #hero .buttons-wrapper {
+         justify-content: center;
+         margin-right: 20%;
+    }
+}

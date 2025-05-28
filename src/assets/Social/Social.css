@@ -1,0 +1,34 @@
+.handles-container {
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .icon-wrapper {
+    color: var(--muted-foreground);
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-wrapper:hover {
+    color: var(--foreground);
+    background: var(--gradient-1); 
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  
+  .icon-wrapper:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-radius: 21px;
+     
+  }
+  
