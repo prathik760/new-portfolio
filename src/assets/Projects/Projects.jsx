@@ -1,12 +1,11 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+ 
 import '../Projects/Projects.css';
-import project1 from '../../assets/img/invitationnation.png';
+import project1 from '../../assets/img/invitationnation.svg';
 import project2 from '../../assets/img/invitationnation2.png';
 import project3 from '../../assets/img/AI-attendance.png';
 import project4 from '../../assets/img/baby.png';
-// import { faShare } from '@fortawesome/free-solid-svg-icons/faShare';
-
+ 
 const Projects = () => {
   return (
     <section id='projects'>
