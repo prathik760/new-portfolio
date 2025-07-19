@@ -14,7 +14,7 @@ const Hero = () => {
           <h1 className='heading-1'>
             Hello I'm Prathik  
             <span className='gradient-text'>
-              Thelkar Frontend
+              Thelkar Software
             </span>
             Developer
           </h1>

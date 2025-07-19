@@ -10,6 +10,11 @@ import java from '../../assets/img/java.png'
 import sql from '../../assets/img/sql-3.png'
 import bot from '../../assets/img/bootstrap.png'
 import tailwind from '../../assets/img/icons8-tailwind-css-48.png'
+import Mongodb from '../../assets/img/MongoDB.svg'
+import Express from '../../assets/img/express1.svg'
+import Node from '../../assets/img/Node.js.svg'
+import Typescript from '../../assets/img/TypeScript.svg'
+import Next from '../../assets/img/next.svg'
 
 const Skills = () => {
   return (
@@ -119,6 +124,57 @@ const Skills = () => {
           <h2 className="progress">80%</h2>
         </div>
       </div>
+
+      <div className="skill">
+        <div className="image">
+          <img src={Mongodb} alt="Mongodb" />
+        </div>
+        <div className="details">
+          <h3 className="name">MongoDB</h3>
+          <h2 className="progress">80%</h2>
+        </div>
+      </div>
+
+      <div className="skill">
+        <div className="image">
+          <img src={Express} alt="Express" />
+        </div>
+        <div className="details">
+          <h3 className="name">Express</h3>
+          <h2 className="progress">80%</h2>
+        </div>
+      </div>
+
+      <div className="skill">
+        <div className="image">
+          <img src={Node} alt="Node" />
+        </div>
+        <div className="details">
+          <h3 className="name">Node JS</h3>
+          <h2 className="progress">80%</h2>
+        </div>
+      </div>
+
+       <div className="skill">
+        <div className="image">
+          <img src={Typescript} alt="Typescript" />
+        </div>
+        <div className="details">
+          <h3 className="name">Typescript</h3>
+          <h2 className="progress">60%</h2>
+        </div>
+      </div>
+
+     <div className="skill">
+        <div className="image">
+          <img src={Next} alt="Next" />
+        </div>
+        <div className="details">
+          <h3 className="name">Next JS</h3>
+          <h2 className="progress">80%</h2>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
