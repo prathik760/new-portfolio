@@ -3,7 +3,7 @@ import "../Projects/Projects.css";
 import project3 from "../../assets/img/AI-attendance.png";
 import carproject from "../../assets/img/car rental.png";
 import todo from "../../assets/img/todolist.png";
-import invitation from "../../assets/img/invitationnation.png";
+import invitation from "../../assets/img/invitation.png";
 
 const Projects = () => {
   return (
