@@ -10,31 +10,34 @@ const footTabs = [
   { name: 'Skills', id: 'skills' },
   { name: 'Services', id: 'services' },
   { name: 'Projects', id: 'projects' },
-  { name: 'Feedbacks', id: 'feedbacks' },
+  { name: 'Contact', id: 'Contact' },
 ];
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="center-content">
-           
-          <div className="footer-tabs">
-            {footTabs.map((tab, index) => (
-              <Link
-                key={index}
-                to={tab.id}
-                spy={true}
-                smooth={true}
-                duration={500}
-                className="tab"
-              >
-                <h4>{tab.name}</h4>
-              </Link>
-            ))}
-          </div>
-          <Social />
+        <Logo />
+
+        <div className="footer-tabs">
+          {footTabs.map((tab, index) => (
+            <Link
+              key={index}
+              to={tab.id}
+              spy={true}
+              smooth={true}
+              duration={500}
+              className="tab"
+            >
+              <h4>{tab.name}</h4>
+            </Link>
+          ))}
         </div>
+
+        {/* <div className="footer-social">
+          <Social />
+        </div> */}
+
         <div className="copyright">
           <p className="muted">Built with love by Prathik Thelkar ❤️</p>
           <p>&copy; 2025 All rights reserved</p>

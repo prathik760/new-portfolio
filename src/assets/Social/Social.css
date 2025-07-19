@@ -1,6 +1,7 @@
 .handles-container {
     align-items: center;
     gap: 10px;
+    margin-left: 10rem;
   }
   
   .icon-wrapper {

@@ -1,8 +1,9 @@
-import React from 'react'
-import '../Hero.jsx/Hero.css'
-import img from '../../assets/img/prathik.png'
-import { Link } from 'react-scroll'
-import Facts from '../facts/Facts'
+import React from 'react';
+import '../Hero.jsx/Hero.css';
+import img from '../../assets/img/prathik.png';
+import { Link } from 'react-scroll';
+import Facts from '../facts/Facts';
+
 const Hero = () => {
   return (
     <section id='hero' className='flex blur-effect'>
@@ -18,11 +19,19 @@ const Hero = () => {
             </span>
             Developer
           </h1>
- 
+
           <Facts />
+
           <div className='flex-center buttons-wrapper' id='new'>
-            <Link to='project' smooth={true} className='btn' id='link' >My Projects</Link>
-            <Link to='contact' smooth={true} className='btn primary' id='link'>Hire me</Link>
+            <Link to='project' smooth={true} className='btn' id='link'>My Projects</Link>
+            <a 
+              href='/Prathik_Thelkar_Resume.pdf' 
+              download='Prathik_Thelkar_Resume.pdf' 
+              className='btn primary' 
+              id='link'
+            >
+              Resume
+            </a>
           </div>
         </div>
       </div>
