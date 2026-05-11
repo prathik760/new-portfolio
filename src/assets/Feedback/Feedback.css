@@ -1,0 +1,69 @@
+
+#feedbacks .feedbacks-container {
+    margin-top: 60px;
+}
+
+.muted{
+    text-align: center;
+    margin-top: 20px;
+}
+.name {
+    text-align: center;
+}
+
+#feedbacks .slick-track {
+    display: flex !important;
+    gap: 20px;
+}
+
+.slick-prev, .slick-next {
+    background: var(--bg-accent);
+    position: relative;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border: solid 2px transparent;
+    transition: var(--transition);
+
+}
+#feedbacks .feed-block:hover {
+    box-shadow: var(--shadow-3);
+}
+
+#feedbacks .profile {
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
+    border-radius: 100%;
+    margin: auto;
+    background: var(--bg-secondary);
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+#feedbacks .feed-block:hover .profile {
+    transform: scale(1.1);
+}
+
+#feedbacks .details {
+    padding: 20px 0;
+    text-align: center;
+}
+
+#feedbacks .botton {
+    text-align: center;
+}
+
+#feedbacks .stars-container {
+      color: var(--warning);
+}
+
+#feedbacks .name {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+@media (max-width:600px) {
+    #feedbacks .slick-track{
+        gap: 0;
+    }
+}

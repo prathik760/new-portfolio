@@ -1,0 +1,426 @@
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Background glow orbs */
+.hero-bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-orb-1 {
+    width: 600px;
+    height: 600px;
+    top: -15%;
+    right: -8%;
+    background: radial-gradient(circle, rgba(228, 58, 21, 0.12) 0%, transparent 65%);
+}
+
+.hero-orb-2 {
+    width: 500px;
+    height: 500px;
+    bottom: -10%;
+    left: -10%;
+    background: radial-gradient(circle, rgba(147, 51, 234, 0.1) 0%, transparent 65%);
+}
+
+/* Main grid */
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Left side ──────────────────────────── */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Available badge */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #10b981;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.hero-badge-dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: pulse-green 2s infinite;
+    flex-shrink: 0;
+}
+
+@keyframes pulse-green {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.hero-name {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    color: var(--foreground);
+    margin-bottom: 16px;
+}
+
+/* Typing animation */
+.hero-role {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.role-text {
+    color: var(--primary);
+}
+
+.role-cursor {
+    color: var(--primary);
+    animation: blink 1s step-end infinite;
+    font-weight: 300;
+    margin-left: 1px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.hero-desc {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--muted-foreground);
+    max-width: 500px;
+    margin-bottom: 36px;
+}
+
+.hero-desc strong {
+    color: var(--foreground-muted);
+    font-weight: 600;
+}
+
+/* Stats row */
+.hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.hero-stat-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    background: var(--gradient-1);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    line-height: 1;
+}
+
+.hero-stat-label {
+    font-size: 11px;
+    color: var(--muted-foreground);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.hero-stat-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--border-primary);
+    flex-shrink: 0;
+}
+
+/* CTA buttons */
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+/* Social links */
+.hero-social {
+    display: flex;
+    gap: 10px;
+}
+
+.hero-social-link {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: var(--muted-foreground);
+    transition: var(--transition);
+}
+
+.hero-social-link:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* ── Right side ─────────────────────────── */
+.hero-image-side {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-img-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-img-ring {
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    padding: 4px;
+    background: var(--gradient-1);
+    position: relative;
+}
+
+.hero-img-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
+
+.hero-img-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.hero-img-glow {
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(228, 58, 21, 0.18) 0%, transparent 70%);
+    z-index: -1;
+}
+
+/* Floating badges */
+.float-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: rgba(8, 15, 30, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    backdrop-filter: blur(12px);
+    z-index: 3;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    animation: float-anim 4s ease-in-out infinite;
+    white-space: nowrap;
+}
+
+.float-top {
+    top: 8%;
+    right: -8%;
+}
+
+.float-bottom {
+    bottom: 8%;
+    left: -8%;
+    animation-delay: 2s;
+}
+
+@keyframes float-anim {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.float-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: var(--gradient-1);
+    color: white;
+    font-size: 16px;
+}
+
+.float-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--foreground);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.float-sub {
+    font-size: 11px;
+    color: var(--muted-foreground);
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Scroll cue */
+.scroll-cue {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-foreground);
+    font-size: 13px;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    animation: bounce-down 2.5s ease-in-out infinite;
+}
+
+.scroll-cue:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+@keyframes bounce-down {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ── Responsive ─────────────────────────── */
+@media (max-width: 1100px) {
+    .hero-img-ring {
+        width: 300px;
+        height: 300px;
+    }
+    .hero-name {
+        font-size: 44px;
+    }
+    .float-top { right: -4%; }
+    .float-bottom { left: -4%; }
+}
+
+@media (max-width: 900px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 44px;
+        padding-top: 90px;
+    }
+
+    .hero-content {
+        order: 2;
+        align-items: center;
+    }
+
+    .hero-image-side {
+        order: 1;
+    }
+
+    .hero-name {
+        font-size: 38px;
+        letter-spacing: -1px;
+    }
+
+    .hero-desc {
+        text-align: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-social {
+        justify-content: center;
+    }
+
+    .hero-img-ring {
+        width: 240px;
+        height: 240px;
+    }
+
+    .float-badge {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-name {
+        font-size: 30px;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-role {
+        font-size: 17px;
+    }
+
+    .hero-stats {
+        gap: 18px;
+    }
+
+    .hero-stat-num {
+        font-size: 22px;
+    }
+
+    .hero-stat-divider {
+        height: 28px;
+    }
+}

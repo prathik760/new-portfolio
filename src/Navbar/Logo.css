@@ -1,0 +1,16 @@
+.logo {
+    cursor: pointer;
+    user-select: none;
+}
+
+.logo-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--foreground);
+    letter-spacing: -1px;
+}
+
+.logo-dot {
+    color: var(--primary);
+}
