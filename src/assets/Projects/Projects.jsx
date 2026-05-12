@@ -5,6 +5,7 @@ import todo from '../img/todolist.png';
 import invitation from '../img/invitation.png';
 import attendance from '../img/AI-attendance.png';
 import b2bProject from '../img/project-1.png';
+import retailBillBook from '../img/retail-bill-book.png';
 import { FaExternalLinkAlt, FaStar, FaWrench, FaLock } from 'react-icons/fa';
 
 const projects = [
@@ -24,7 +25,7 @@ const projects = [
     id: 2,
     title: 'Retail Bill Book SaaS',
     desc: 'Multi-tenant invoicing SaaS with PDF export, Razorpay billing, GST auto-calculation, RBAC, real-time inventory tracking, and analytics dashboard targeting the SMB market.',
-    image: invitation,
+    image: retailBillBook,
     tags: ['React.js', 'Node.js', 'MongoDB', 'Razorpay', 'Prisma ORM', 'JWT', 'PDF Gen'],
     category: 'fullstack',
     demo: null,
