@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './Projects.css';
-import carproject from '../img/car rental.png';
-import todo from '../img/todolist.png';
-import invitation from '../img/invitation.png';
-import attendance from '../img/AI-attendance.png';
-import b2bProject from '../img/project-1.png';
-import retailBillBook from '../img/retail-bill-book.png';
+import carproject from '../img/car-rental-optimized.jpg';
+import todo from '../img/todolist-optimized.jpg';
+import invitation from '../img/invitation-optimized.jpg';
+import attendance from '../img/AI-attendance-optimized.jpg';
+import b2bProject from '../img/project-1-optimized.jpg';
+import retailBillBook from '../img/retail-bill-book-optimized.jpg';
 import { FaExternalLinkAlt, FaStar, FaWrench, FaLock } from 'react-icons/fa';
 
 const projects = [
@@ -124,7 +124,14 @@ const Projects = () => {
           {filtered.map((p) => (
             <div key={p.id} className={`proj-card glass-card ${p.featured ? 'proj-card--featured' : ''}`}>
               <div className="proj-img-wrap">
-                <img src={p.image} alt={p.title} loading="lazy" />
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  loading="lazy"
+                  decoding="async"
+                  width="560"
+                  height="315"
+                />
                 <div className="proj-img-overlay">
                   {p.demo && (
                     <a

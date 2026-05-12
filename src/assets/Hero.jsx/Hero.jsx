@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
-import img from '../img/prathik.png';
+import img from '../img/prathik-optimized.jpg';
 import { Link } from 'react-scroll';
 import { FaGithub, FaLinkedin, FaDownload, FaArrowDown, FaStar, FaRocket } from 'react-icons/fa';
 
@@ -130,7 +130,15 @@ const Hero = () => {
           <div className="hero-img-wrapper">
             <div className="hero-img-ring">
               <div className="hero-img-inner">
-                <img src={img} alt="Prathik Thelkar" />
+                <img
+                  src={img}
+                  alt="Prathik Thelkar"
+                  width="360"
+                  height="360"
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high"
+                />
               </div>
             </div>
             <div className="hero-img-glow" />
