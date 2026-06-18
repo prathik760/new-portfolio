@@ -8,6 +8,7 @@ const resumeUrl = import.meta.env.VITE_RESUME_URL || '/Prathik_Thelkar_Resume.pd
 
 const roles = [
   'Full Stack Developer',
+  'SaaS Founder',
   'React.js Expert',
   'Next.js Developer',
   'Node.js Engineer',
@@ -61,14 +62,14 @@ const Hero = () => {
           </div>
 
           <p className="hero-desc">
-            Results-driven Full Stack Developer with 1+ year building production-grade web apps.
-            Expert in React.js, Next.js, Node.js &amp; TypeScript. Promoted Intern → Full-Time
-            in 6 months — recognized as <strong>Star Performer</strong>.
+            Results-driven Full Stack Developer &amp; SaaS Founder with 2+ years building production-grade web apps.
+            Expert in React.js, Next.js, Node.js &amp; TypeScript. Founded ShareInvite independently — promoted
+            Intern → Full-Time in 6 months, recognized as <strong>Star Performer</strong>.
           </p>
 
           <div className="hero-stats">
             <div className="hero-stat">
-              <span className="hero-stat-num">1+</span>
+              <span className="hero-stat-num">2+</span>
               <span className="hero-stat-label">Years Exp.</span>
             </div>
             <div className="hero-stat-divider" />
@@ -78,8 +79,8 @@ const Hero = () => {
             </div>
             <div className="hero-stat-divider" />
             <div className="hero-stat">
-              <span className="hero-stat-num">3</span>
-              <span className="hero-stat-label">Companies</span>
+              <span className="hero-stat-num">1</span>
+              <span className="hero-stat-label">SaaS Founded</span>
             </div>
             <div className="hero-stat-divider" />
             <div className="hero-stat">

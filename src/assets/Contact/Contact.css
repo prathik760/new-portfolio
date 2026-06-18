@@ -4,15 +4,16 @@
 
 #contact > .container {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: start;
+    align-items: stretch;
 }
 
 /* Left column */
 .contact-options {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .contact-options h1 {
@@ -59,12 +60,15 @@
     border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: var(--border-radius-lg);
     padding: 36px;
+    display: flex;
+    flex-direction: column;
 }
 
 #contact form {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    flex: 1;
 }
 
 #contact .row {
@@ -98,6 +102,26 @@
 textarea.control {
     resize: vertical;
     min-height: 130px;
+    flex: 1;
+}
+
+.contact-status {
+    font-size: 13px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-top: 2px;
+}
+
+.contact-status--success {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
+}
+
+.contact-status--error {
+    background: rgba(228, 58, 21, 0.08);
+    border: 1px solid rgba(228, 58, 21, 0.25);
+    color: var(--primary);
 }
 
 .bottom {

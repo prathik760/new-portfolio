@@ -172,6 +172,121 @@
     color: var(--primary);
 }
 
+/* ── Founder / Entrepreneurial section ── */
+.founder-section {
+    margin-bottom: 52px;
+}
+
+.founder-icon-color {
+    color: #f59e0b !important;
+}
+
+.founder-card {
+    display: flex;
+    gap: 22px;
+    padding: 24px 26px;
+    border: 1px solid rgba(245, 158, 11, 0.28);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.04) 0%, transparent 60%);
+    position: relative;
+    overflow: hidden;
+}
+
+.founder-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f59e0b, var(--primary));
+    border-radius: 8px 8px 0 0;
+}
+
+.founder-icon-wrap {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f59e0b, var(--primary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.founder-card-body {
+    flex: 1;
+}
+
+.founder-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.founder-header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.founder-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 13px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #f59e0b;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.founder-link-btn:hover {
+    background: rgba(245, 158, 11, 0.18);
+    color: #f59e0b;
+}
+
+.founder-about {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted-foreground);
+    margin-bottom: 14px;
+    padding: 12px 14px;
+    background: rgba(245, 158, 11, 0.04);
+    border-left: 3px solid rgba(245, 158, 11, 0.4);
+    border-radius: 0 6px 6px 0;
+}
+
+.founder-badge {
+    padding: 3px 12px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #f59e0b;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.founder-exp-tag {
+    background: rgba(245, 158, 11, 0.07) !important;
+    border-color: rgba(245, 158, 11, 0.2) !important;
+    color: #f59e0b !important;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .exp-grid {

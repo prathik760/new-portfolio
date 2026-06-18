@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
+
+// EmailJS template must contain these exact variable names:
+// {{firstName}}, {{lastName}}, {{email}}, {{phone}}, {{message}}
+const SERVICE_ID  = 'service_hb2anp9';
+const TEMPLATE_ID = 'template_ue3k7k9';
+const PUBLIC_KEY  = 'UqXG16shAwWG2S-Ne';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +18,8 @@ const Contact = () => {
     phone: '',
     message: '',
   });
+  const [status, setStatus] = useState(null); // 'sending' | 'success' | 'error'
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,21 +28,20 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setStatus('sending');
+    setErrorMsg('');
 
-    emailjs.send(
-      'service_hb2anp9',          // Your Gmail-connected EmailJS Service ID
-      'template_ue3k7k9',         // Updated Template ID here
-      formData,                   // Data to send
-      'UqXG16shAwWG2S-Ne'         // Your EmailJS Public Key
-    )
-    .then(() => {
-      alert('Message sent successfully!');
-      setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
-    })
-    .catch((error) => {
-      alert('Failed to send message. Please try again later.');
-      console.error('EmailJS error:', error);
-    });
+    emailjs
+      .send(SERVICE_ID, TEMPLATE_ID, formData, { publicKey: PUBLIC_KEY })
+      .then(() => {
+        setStatus('success');
+        setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
+      })
+      .catch((error) => {
+        console.error('EmailJS error:', error);
+        setStatus('error');
+        setErrorMsg(error?.text || error?.message || 'Unknown error — check console for details.');
+      });
   };
 
   return (
@@ -119,8 +126,22 @@ const Contact = () => {
               rows={6}
               required
             ></textarea>
+
+            {status === 'success' && (
+              <p className="contact-status contact-status--success">
+                Message sent! I'll get back to you soon.
+              </p>
+            )}
+            {status === 'error' && (
+              <p className="contact-status contact-status--error">
+                Failed to send: {errorMsg}
+              </p>
+            )}
+
             <div className="flex-center bottom">
-              <button type="submit" className="btn primary">Send Message</button>
+              <button type="submit" className="btn primary" disabled={status === 'sending'}>
+                {status === 'sending' ? 'Sending…' : 'Send Message'}
+              </button>
             </div>
           </form>
         </div>

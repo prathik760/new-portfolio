@@ -1,6 +1,23 @@
 import React from 'react';
 import './Experience.css';
-import { FaBriefcase, FaGraduationCap } from 'react-icons/fa';
+import { FaBriefcase, FaGraduationCap, FaRocket, FaExternalLinkAlt } from 'react-icons/fa';
+
+const founderEntry = {
+  type: 'founder',
+  role: 'Founder & Full Stack Developer',
+  company: 'ShareInvite',
+  link: 'https://shareinvite.in',
+  period: 'May 2026 – Present',
+  location: 'Remote',
+  current: true,
+  about: 'ShareInvite is a SaaS platform that lets users instantly create and share beautiful digital invitation websites — for weddings, birthdays, corporate events, and more. Users pick a template, personalise it, and share a live link — no design skills needed. Built with real-time RSVP updates via WebSockets and Redis-backed session management for low-latency performance.',
+  highlights: [
+    'Founded and independently built the platform end-to-end — architecture, payment integration, automated onboarding, hosting, SEO, and domain configuration — and continue driving performance optimisation and product iteration.',
+    'Implemented real-time RSVP tracking with WebSockets and Redis pub/sub, enabling instant guest-response updates without page refresh.',
+    'Integrated payment gateway for subscription billing and automated onboarding flows, reducing time-to-live for new users to under 2 minutes.',
+  ],
+  tags: ['Next.js', 'TypeScript', 'Node.js', 'MongoDB', 'Redis', 'WebSockets', 'Vercel', 'Payments', 'SEO'],
+};
 
 const experiences = [
   {
@@ -79,6 +96,47 @@ const education = [
   },
 ];
 
+const FounderCard = ({ item }) => (
+  <div className="founder-card glass-card">
+    <div className="founder-icon-wrap">
+      <FaRocket />
+    </div>
+    <div className="founder-card-body">
+      <div className="founder-header">
+        <div>
+          <span className="exp-period">{item.period}</span>
+          <h3 className="exp-role">{item.role}</h3>
+          <span className="exp-company">{item.company} · {item.location}</span>
+        </div>
+        <div className="founder-header-right">
+          <span className="founder-badge">Founder</span>
+          {item.link && (
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="founder-link-btn"
+            >
+              <FaExternalLinkAlt /> {item.link.replace('https://', '')}
+            </a>
+          )}
+        </div>
+      </div>
+      {item.about && <p className="founder-about">{item.about}</p>}
+      <ul className="exp-list">
+        {item.highlights.map((h, i) => (
+          <li key={i}>{h}</li>
+        ))}
+      </ul>
+      <div className="exp-tags">
+        {item.tags.map((t, i) => (
+          <span key={i} className="exp-tag founder-exp-tag">{t}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
 const TimelineCard = ({ item }) => (
   <div className={`exp-card ${item.current ? 'exp-card--current' : ''}`}>
     <div className="exp-dot">
@@ -118,6 +176,13 @@ const Experience = () => (
           Experience &amp; <span className="gradient-text">Education</span>
         </h1>
         <p>A track record of delivering measurable results across companies, products, and teams.</p>
+      </div>
+
+      <div className="founder-section">
+        <h3 className="exp-col-heading">
+          <FaRocket className="exp-col-icon founder-icon-color" /> Entrepreneurial Experience
+        </h3>
+        <FounderCard item={founderEntry} />
       </div>
 
       <div className="exp-grid">

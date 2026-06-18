@@ -39,6 +39,7 @@ const categories = [
     skills: [
       { name: 'MongoDB', level: 87 },
       { name: 'PostgreSQL', level: 76 },
+      { name: 'Redis', level: 72 },
       { name: 'Prisma ORM', level: 76 },
       { name: 'Firebase', level: 70 },
       { name: 'Mongoose', level: 87 },
@@ -72,7 +73,7 @@ const Skills = () => {
             Technical <span className="gradient-text">Skills</span>
           </h1>
           <p>
-            A comprehensive toolkit built through 1+ year of production experience and
+            A comprehensive toolkit built through 2+ years of production experience and
             continuous learning across the full stack.
           </p>
         </div>
